@@ -1,0 +1,8 @@
+This software provides several tools implementing a scheme for
+"key-policy attribute based encryption" (KP-ABE).
+
+To install this software, you will need to have the Pairing-Based
+Cryptography (PBC) library installed. You can get it from the
+following page:
+
+   http://crypto.stanford.edu/pbc/
