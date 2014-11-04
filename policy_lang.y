@@ -85,7 +85,7 @@ kpabe_policy_t* ge_policy( sized_integer_t* n, char* attr );
 
 %%
 
-result: policy { final_policy = $1 }
+result: policy { final_policy = $1; }
 
 number:   INTLIT '#' INTLIT          { $$ = expint($1, $3); }
         | INTLIT                     { $$ = flexint($1);    }
