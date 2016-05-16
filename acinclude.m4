@@ -34,6 +34,7 @@ BACKUP_LIBS=${LIBS}
 CFLAGS="${CFLAGS} ${GMP_CFLAGS}"
 LIBS="${LIBS} ${GMP_LIBS}"
 
+AS_IF([test $cross_compiling = yes],[echo "Cross-compiling; assuming OK"],[
 AC_TRY_LINK(
   [#include <gmp.h>],
   [mpz_t a; mpz_init (a);],
@@ -81,7 +82,7 @@ be found in the first path and libgmp.a can be found in the second.
 See ./configure --help for more information.
 ])
   ])
-
+])
 CFLAGS=${BACKUP_CFLAGS}
 LIBS=${BACKUP_LIBS}
 
@@ -124,6 +125,7 @@ BACKUP_LIBS=${LIBS}
 CFLAGS="${CFLAGS} ${PBC_CFLAGS} ${GMP_CFLAGS}"
 LIBS="${LIBS} ${PBC_LIBS} ${GMP_LIBS}"
 
+AS_IF([test $cross_compiling = yes],[echo "Cross-compiling; assuming OK"],[
 AC_TRY_LINK(
   [#include <pbc.h>],
   [pairing_t p; pairing_init_set_buf(p, "", 0);],
@@ -152,7 +154,7 @@ be found in the first path and libpbc.a can be found in the second.
 See ./configure --help for more information.
 ])
   ])
-
+])
 CFLAGS=${BACKUP_CFLAGS}
 LIBS=${BACKUP_LIBS}
 
