@@ -33,7 +33,7 @@ AC_CHECK_HEADERS([fcntl.h stddef.h string.h],,
  [AC_MSG_ERROR([could not find all required headers fcntl.h, stddef.h, string.h])])
 
 dnl  specific library functions
-AC_FUNC_MALLOC
+
 AC_FUNC_STAT
 AC_FUNC_VPRINTF
 AC_CHECK_LIB(crypto, SHA1,,
