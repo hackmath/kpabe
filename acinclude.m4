@@ -196,7 +196,7 @@ BACKUP_LIBS=${LIBS}
 
 CFLAGS="${CFLAGS} ${CELIA_CFLAGS} ${PBC_CFLAGS} ${GMP_CFLAGS} ${GLIB_CFLAGS}"
 LIBS="${LIBS} ${CELIA_LIBS} ${PBC_LIBS} ${GMP_LIBS} ${GLIB_LIBS}"
-
+AS_IF([test $cross_compiling = yes],[echo "Cross-compiling; assuming OK"],[
 AC_TRY_LINK(
   [#include <glib.h>
    #include <pbc.h>
@@ -230,6 +230,7 @@ second.
 See ./configure --help for more information.
 ])
   ])
+])
 
 CFLAGS=${BACKUP_CFLAGS}
 LIBS=${BACKUP_LIBS}
